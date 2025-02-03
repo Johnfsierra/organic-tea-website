@@ -1,0 +1,117 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: green;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+}
+
+nav ul li a.active {
+    background-color: green;
+    border-radius: 4px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+
+.welcome-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: auto;
+}
+
+.footer-column h3 {
+    color: #333;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #555;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons li {
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
