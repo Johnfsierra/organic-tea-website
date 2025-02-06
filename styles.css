@@ -3,13 +3,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
+    background-color: #fafafa;  /* Fondo más claro para mayor contraste */
     color: #333; /* Mejor contraste para el texto */
 }
 
 /* Header */
 header {
-    background-color: #333;
+    background-color: #1a1a1a; /* Cambiado a un color más oscuro */
     color: white;
     display: flex;
     justify-content: space-between;
@@ -38,12 +38,12 @@ nav ul li a {
     color: white;
     text-decoration: none;
     padding: 12px 20px; /* Aumentado el tamaño de los botones de navegación */
-    background-color: #333; /* Fondo oscuro para mejorar el contraste */
+    background-color: #1a1a1a; /* Fondo oscuro para mejorar el contraste */
     border-radius: 4px;
 }
 
 nav ul li a.active {
-    background-color: green;
+    background-color: #006400;  /* Verde más brillante */
 }
 
 /* Hero Section */
@@ -62,29 +62,30 @@ nav ul li a.active {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(0, 0, 0, 0.6);  /* Fondo oscuro para contraste */
+    color: white;  /* Texto blanco para mejor contraste */
     padding: 20px;
     border-radius: 8px;
 }
 
 /* Button */
 button {
-    background-color: green;
+    background-color: #006400; /* Verde más brillante */
     color: white;
     border: none;
     padding: 15px 30px; /* Aumentado el tamaño de los botones */
     cursor: pointer;
     border-radius: 5px;
-    font-size: 16px; /* Aumentado el tamaño de la fuente */
+    font-size: 16px;
 }
 
 button:hover {
-    background-color: darkgreen; /* Añadido efecto de hover para mejor accesibilidad */
+    background-color: #004d00;  /* Verde más oscuro */
 }
 
 /* Footer */
 footer {
-    background-color: white;
+    background-color: #ffffff;
     padding: 20px;
     text-align: center;
 }
@@ -107,8 +108,8 @@ footer {
 
 .footer-column ul li a {
     text-decoration: none;
-    color: #555;
-    font-size: 16px; /* Tamaño de fuente aumentado para facilitar la lectura */
+    color: #333; /* Cambiado a un color oscuro para el texto de los enlaces */
+    font-size: 16px; /* Aumentado tamaño de fuente para facilitar la lectura */
 }
 
 .social-icons {
