@@ -3,13 +3,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fafafa;  /* Fondo más claro para mayor contraste */
-    color: #333; /* Mejor contraste para el texto */
+    background-color: #fafafa;
+    color: #333;
 }
 
 /* Header */
 header {
-    background-color: #1a1a1a; /* Cambiado a un color más oscuro */
+    background-color: #1a1a1a;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -37,13 +37,13 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-    padding: 12px 20px; /* Aumentado el tamaño de los botones de navegación */
-    background-color: #1a1a1a; /* Fondo oscuro para mejorar el contraste */
+    padding: 12px 20px;
+    background-color: #1a1a1a;
     border-radius: 4px;
 }
 
 nav ul li a.active {
-    background-color: #006400;  /* Verde más brillante */
+    background-color: #006400;
 }
 
 /* Hero Section */
@@ -62,25 +62,25 @@ nav ul li a.active {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.6);  /* Fondo oscuro para contraste */
-    color: white;  /* Texto blanco para mejor contraste */
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
     padding: 20px;
     border-radius: 8px;
 }
 
 /* Button */
 button {
-    background-color: #006400; /* Verde más brillante */
+    background-color: #006400;
     color: white;
     border: none;
-    padding: 15px 30px; /* Aumentado el tamaño de los botones */
+    padding: 15px 30px;
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
 }
 
 button:hover {
-    background-color: #004d00;  /* Verde más oscuro */
+    background-color: #004d00;
 }
 
 /* Footer */
@@ -92,6 +92,7 @@ footer {
 
 .footer-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     max-width: 900px;
     margin: auto;
@@ -108,8 +109,8 @@ footer {
 
 .footer-column ul li a {
     text-decoration: none;
-    color: #333; /* Cambiado a un color oscuro para el texto de los enlaces */
-    font-size: 16px; /* Aumentado tamaño de fuente para facilitar la lectura */
+    color: #333;
+    font-size: 16px;
 }
 
 .social-icons {
@@ -118,10 +119,106 @@ footer {
 }
 
 .social-icons li {
-    margin: 0 15px; /* Aumentado el espacio entre los íconos sociales */
+    margin: 0 15px;
 }
 
 .social-icons img {
-    width: 30px; /* Aumentado el tamaño de los íconos */
+    width: 30px;
     height: 30px;
+}
+
+/* Forms */
+.signup-form, .login-form {
+    max-width: 400px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.signup-form h2, .login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.signup-form label, .login-form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.signup-form input, .login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Products */
+.products {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-item {
+    width: 250px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.product-item img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.product-item h3 {
+    margin: 10px 0 5px;
+}
+
+.product-item p {
+    margin: 5px 0;
+}
+
+/* Cart */
+.cart {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.cart table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.cart th, .cart td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.cart th {
+    background-color: #006400;
+    color: white;
+}
+
+.cart form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
 }
