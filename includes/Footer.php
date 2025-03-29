@@ -35,3 +35,6 @@
         <p>&copy; 2025 Emma's Tea Store. All rights reserved.</p>
     </div>
 </footer>
+
+</body>
+</html>
