@@ -11,14 +11,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
     $confirm = $_POST['confirm'];
 
-    // Validación del lado del servidor
     if (empty($username) || empty($email) || empty($password) || $password !== $confirm) {
         $error = "Please complete all fields and make sure passwords match.";
     } else {
         $hashed = password_hash($password, PASSWORD_DEFAULT);
         $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
         if ($stmt->execute([$username, $email, $hashed])) {
-            $success = "Account created successfully! Redirecting to login page...";
+            $success = "Account created successfully! Redirecting to login...";
             echo "<script>setTimeout(() => window.location.href = 'login.php', 3000);</script>";
         } else {
             $error = "Registration failed. Please try again.";
@@ -32,12 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h2>Sign Up</h2>
 
         <?php if ($error): ?>
-            <p style="color: red;"><?php echo htmlspecialchars($error); ?></p>
+            <p class="error-msg"><?php echo htmlspecialchars($error); ?></p>
         <?php elseif ($success): ?>
-            <p style="color: green;"><?php echo htmlspecialchars($success); ?></p>
+            <p class="success-msg"><?php echo htmlspecialchars($success); ?></p>
         <?php endif; ?>
 
-        <?php if (!$success): // Mostrar el formulario solo si no hay éxito ?>
+        <?php if (!$success): ?>
             <label for="username">Username:</label>
             <input type="text" name="username" id="username" required>
 
@@ -56,7 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </main>
 
 <script>
-// Validación con JavaScript (lado cliente)
 function validateSignup() {
     const username = document.getElementById("username").value.trim();
     const email = document.getElementById("email").value.trim();
