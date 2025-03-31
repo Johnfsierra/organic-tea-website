@@ -11,14 +11,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
     $confirm = $_POST['confirm'];
 
-    // Validación simple del lado del servidor
+    // Validación del lado del servidor
     if (empty($username) || empty($email) || empty($password) || $password !== $confirm) {
         $error = "Please complete all fields and make sure passwords match.";
     } else {
         $hashed = password_hash($password, PASSWORD_DEFAULT);
         $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
         if ($stmt->execute([$username, $email, $hashed])) {
-            $success = "Account created successfully!";
+            $success = "Account created successfully! Redirecting to login page...";
+            echo "<script>setTimeout(() => window.location.href = 'login.php', 3000);</script>";
         } else {
             $error = "Registration failed. Please try again.";
         }
@@ -36,19 +37,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p style="color: green;"><?php echo htmlspecialchars($success); ?></p>
         <?php endif; ?>
 
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" required>
+        <?php if (!$success): // Mostrar el formulario solo si no hay éxito ?>
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" required>
 
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" required>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
 
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
 
-        <label for="confirm">Confirm Password:</label>
-        <input type="password" name="confirm" id="confirm" required>
+            <label for="confirm">Confirm Password:</label>
+            <input type="password" name="confirm" id="confirm" required>
 
-        <button type="submit">Register</button>
+            <button type="submit">Register</button>
+        <?php endif; ?>
     </form>
 </main>
 
@@ -65,7 +68,6 @@ function validateSignup() {
         return false;
     }
 
-    // Validar formato de email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
         alert("Please enter a valid email.");
