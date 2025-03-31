@@ -37,16 +37,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php endif; ?>
 
         <label for="username">Username:</label>
-        <input type="text" name="username" id="username">
+        <input type="text" name="username" id="username" required>
 
         <label for="email">Email:</label>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" required>
 
         <label for="password">Password:</label>
-        <input type="password" name="password" id="password">
+        <input type="password" name="password" id="password" required>
 
         <label for="confirm">Confirm Password:</label>
-        <input type="password" name="confirm" id="confirm">
+        <input type="password" name="confirm" id="confirm" required>
 
         <button type="submit">Register</button>
     </form>
@@ -66,7 +66,7 @@ function validateSignup() {
     }
 
     // Validar formato de email
-    const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
         alert("Please enter a valid email.");
         return false;
