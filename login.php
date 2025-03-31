@@ -1,6 +1,8 @@
+
+<?php session_start(); ?>
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/db_connect.php'; ?>
-<?php session_start(); ?>
+
 
 <main>
   <section class="login-form">
