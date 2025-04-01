@@ -51,3 +51,15 @@ include 'includes/db_connect.php';
 </main>
 
 <?php include 'includes/footer.php'; ?>
+
+<!-- Validación con JavaScript para búsqueda -->
+<script>
+document.querySelector("form[method='GET']").addEventListener("submit", function(e) {
+    const searchInput = document.querySelector("input[name='search']").value.trim();
+
+    if (searchInput === "") {
+        alert("Please enter a product name to search.");
+        e.preventDefault(); // Evita envío si está vacío
+    }
+});
+</script>
