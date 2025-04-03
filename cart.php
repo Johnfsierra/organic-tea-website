@@ -1,8 +1,18 @@
 
+<?php
+session_start();
 
-<?php include 'includes/header.php'; ?>
-<?php include 'includes/db_connect.php'; ?>
-<?php session_start(); ?>
+// 🚫 Restringe acceso si el usuario no ha iniciado sesión
+// 🚫 Restrict access if user is not logged in
+if (!isset($_SESSION[‘user_id’])) {
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
+include 'includes/header.php';
+include 'includes/db_connect.php';
+?>
 
 <main>
   <section class="cart">
