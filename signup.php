@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
         if ($stmt->execute([$username, $email, $hashed])) {
             $success = "Account created successfully! Redirecting to login...";
-            echo "<script>setTimeout(() => window.location.href = 'login.php', 3000);</script>";
+            echo "<script>setTimeout(() => window.location.href = 'login.php', 30000);</script>";
         } else {
             $error = "Registration failed. Please try again.";
         }
