@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_name'] = $user['username'];
             $success = "Login successful! Redirecting...";
-            echo "<script>setTimeout(() => window.location.href = 'index.php', 2000);</script>";
+            echo "<script>setTimeout(() => window.location.href = 'index.php', 10000);</script>";
         } else {
             $error = "Invalid email or password.";
         }
