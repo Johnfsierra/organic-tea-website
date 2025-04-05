@@ -16,16 +16,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($username) || empty($email) || empty($password) || $password !== $confirm) {
         $error = "Please complete all fields and make sure passwords match.";
     } else {
-        $hashed = password_hash($password, PASSWORD_DEFAULT);
-        $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
-        if ($stmt->execute([$username, $email, $hashed])) {
-            $success = "Account created successfully! Redirecting to login...";
-            echo "<script>setTimeout(() => window.location.href = 'login.php', 30000);</script>";
+        // Check if email already exists
+        $stmt = $pdo->prepare("SELECT id FROM users WHERE email = ?");
+        $stmt->execute([$email]);
+        if ($stmt->fetch()) {
+            $error = "An account with this email already exists.";
         } else {
-            $error = "Registration failed. Please try again.";
+            // Insert new user
+            $hashed = password_hash($password, PASSWORD_DEFAULT);
+            $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
+            if ($stmt->execute([$username, $email, $hashed])) {
+                $success = "Account created successfully! Redirecting to login...";
+                echo "<script>setTimeout(() => window.location.href = 'login.php', 3000);</script>";
+            } else {
+                $error = "Registration failed. Please try again.";
+            }
         }
     }
 }
+
 ?>
 
 <main>
